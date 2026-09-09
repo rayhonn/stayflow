@@ -1,0 +1,29 @@
+{
+  "name": "stayflow",
+  "version": "0.0.0",
+  "private": true,
+  "description": "StayFlow Hotel OS enterprise monorepo",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": ">=10 <11"
+  },
+  "scripts": {
+    "dev": "nx run-many -t dev --parallel=5",
+    "build": "nx run-many -t build",
+    "test": "nx run-many -t test",
+    "test:integration": "nx run-many -t test-integration",
+    "test:e2e": "nx run-many -t e2e",
+    "lint": "nx run-many -t lint",
+    "typecheck": "nx run-many -t typecheck",
+    "graph": "nx graph",
+    "infra:up": "docker compose up -d postgres redis",
+    "infra:down": "docker compose down",
+    "infra:logs": "docker compose logs -f",
+    "infra:ps": "docker compose ps"
+  },
+  "devDependencies": {
+    "nx": "^23.0.0",
+    "typescript": "^6.0.0",
+    "prettier": "^3.0.0"
+  }
+}
